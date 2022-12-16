@@ -1,2 +1,6 @@
 Le socket serveur est crée avec succès
-Erreur dans la liaison
+Je demande au serveur de m'envoyer 1 nombres.
+Demande envoyée avec succès.
+La réponse du serveur : 
+0 ) 8
+Fermeture de la connexion.

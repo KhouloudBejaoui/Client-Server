@@ -26,7 +26,6 @@ int main(int argc, char **argv)
     GtkWidget *title1;
     GtkWidget *nombres;
     GtkWidget *window;
-    GtkWidget *image1;
     GtkWidget *fixed;
     GtkWidget *type;
     load_css();

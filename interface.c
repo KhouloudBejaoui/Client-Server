@@ -5,8 +5,6 @@
 #include <stdio.h>
 #include "./Projet_Unix_Part2/src/serv_cli.h"
 
-// gcc `pkg-config --cflags gtk+-3.0` -o prog interface.c `pkg-config --libs gtk+-3.0`
-
 void load_css(void)
 {
     GtkCssProvider *provider;
@@ -46,7 +44,6 @@ system("gnome-terminal -e 'sh -c \"gcc -o /home/khouloud/Desktop/projetUnix/Proj
     GtkWidget *window;
     GtkWidget *button1;
     GtkWidget *button2;
-    GtkWidget *img;
     GtkWidget *fixed;
 
     load_css();
@@ -61,8 +58,6 @@ system("gnome-terminal -e 'sh -c \"gcc -o /home/khouloud/Desktop/projetUnix/Proj
     gtk_widget_set_size_request(GTK_WIDGET(button2), 70, 70);
     gtk_widget_set_size_request(GTK_WIDGET(button1),70, 70);
     gtk_container_add(GTK_CONTAINER(window), fixed);
-    //img = gtk_image_new_from_file("/home/khouloud/Desktop/projetUnix/bg.jpg");
-    //gtk_fixed_put(GTK_FIXED(fixed), img, 0, 0);
     gtk_fixed_put(GTK_FIXED(fixed), Label, 190, 50);
     gtk_fixed_put(GTK_FIXED(fixed), button2, 200, 150);
     gtk_fixed_put(GTK_FIXED(fixed), button1, 210, 250);
