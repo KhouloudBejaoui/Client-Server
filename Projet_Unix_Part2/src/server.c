@@ -26,10 +26,10 @@ int main(int argc, char **argv)
   sockfd = socket(AF_INET, SOCK_STREAM, 0);
   if (sockfd < 0)
   {
-    fprintf(file, "Erreur lors de la création du socket");
+    printf("Erreur lors de la création du socket");
     exit(1);
   }
-  fprintf(file, "Le socket serveur est crée avec succès\n");
+  printf("Le socket serveur est crée avec succès\n");
 
   server_addr.sin_family = AF_INET;            // famille adresse
   server_addr.sin_port = port;                 // port
@@ -39,20 +39,20 @@ int main(int argc, char **argv)
   e = bind(sockfd, (struct sockaddr *)&server_addr, sizeof(server_addr));
   if (e < 0)
   {
-    fprintf(file, "Erreur dans la liaison");
+    printf("Erreur dans la liaison");
     exit(1);
   }
-  fprintf(file, "Liaison faite avec succès.\n");
+  printf("Liaison faite avec succès.\n");
 
   // prêt à accepter les demandes de connexion client
   // Création d’une file d’attente de demandes de connexion de longueur = 10 pour mettre en file d’attente les demandes de connexion entrantes.
   if (listen(sockfd, 10) == 0)
   {
-    fprintf(file, "Écoute....\n");
+    printf("Écoute....\n");
   }
   else
   {
-    fprintf(file, "Erreur lors de l'écoute");
+    printf("Erreur lors de l'écoute");
     exit(1);
   }
 
@@ -66,12 +66,12 @@ int main(int argc, char **argv)
     {
       break;
     }
-    fprintf(file, "Le client demande %d numéros.\n", n);
+    printf("Le client demande %d numéros.\n", n);
 
     int pid = fork();
     if (pid < 0)
     {
-      fprintf(file, "Erreur fork");
+      printf("Erreur fork");
       exit(1);
     }
 
@@ -85,10 +85,10 @@ int main(int argc, char **argv)
       // écriture des numéros sortants sur le socket accepté new_socket
       if (send(new_sock, &reponse, sizeof(reponse), 0) == -1)
       {
-        fprintf(file, "Erreur lors de l'envoi des numéros.");
+        printf("Erreur lors de l'envoi des numéros.");
         exit(1);
       }
-      fprintf(file, "Les numéros sont envoyés au client avec succès.\n");
+      printf("Les numéros sont envoyés au client avec succès.\n");
     }
   }
   fclose(file);

@@ -20,7 +20,7 @@ int main(int argc, char **argv){
     f2= mkfifo(fifo2,0644); //creation du fifo2
     if (f1 == -1 || f2 == -1)
     {
-        fprintf(file,"erreur lors de creation des tubes");
+        printf("erreur lors de creation des tubes");
         exit(2);
     }
     
@@ -32,7 +32,7 @@ int main(int argc, char **argv){
     desc2=open(fifo2,O_WRONLY); //ouverture du fifo1 en ecriture
     if (desc1 == -1 || desc2 == -1)
     {
-        fprintf(file,"erreur lors de l'ouverture des tubes");
+        printf("erreur lors de l'ouverture des tubes");
         exit(1);
     }
 
@@ -64,7 +64,7 @@ int main(int argc, char **argv){
         write(desc2,reponse,sizeof(reponse));
         
         /* envoi du signal SIGUSR1 au client concerné */
-        fprintf(file,"\nEnvoi de SIGUSR1 au client num = %d\n",idClient);
+        printf("\nEnvoi de SIGUSR1 au client num = %d\n",idClient);
         kill(idClient,SIGUSR1);
         fclose(file);
     }

@@ -20,7 +20,7 @@ int main(int argc, char **argv){
     fprintf(file,"Erreur lors de la création du socket");
     exit(1);
   }
-  fprintf(file,"Le socket serveur est crée avec succès\n");
+  fprintf(file,"Le socket client est crée avec succès\n");
 
   server_addr.sin_family = AF_INET; //famille adresse
   server_addr.sin_port = port; //numéro port
@@ -50,7 +50,7 @@ int main(int argc, char **argv){
   //Affichage de la réponse du serveur
   fprintf(file,"La réponse du serveur : \n");
   for(int i=0; i<n; i++){
-    fprintf(file,"%d ) %d\n",i,reponse[i]);
+    fprintf(file,"%d ) %d\n",i+1,reponse[i]);
   }
   
   //femeture de la connexion
@@ -59,3 +59,4 @@ int main(int argc, char **argv){
 fclose(file);
   return 0;
 }
+

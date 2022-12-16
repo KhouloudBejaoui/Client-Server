@@ -10,11 +10,11 @@
 #include<stdlib.h>
 
 void hand_reveil(int sig){
-    fprintf(file,"\nJe suis le serveur numero %d : je suis reveille et je vais traiter la demande \n-----------------------------------------------------\n",getpid());
+    printf("\nJe suis le serveur numero %d : je suis reveille et je vais traiter la demande \n-----------------------------------------------------\n",getpid());
 }
 
 void fin_serveur(int sig){
-    fprintf(file,"\n fin serveur \n");
+    printf("\n fin serveur \n");
     exit(1);
 }
 
