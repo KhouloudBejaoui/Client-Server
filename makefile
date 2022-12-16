@@ -9,7 +9,7 @@ PROG_NAME=interface
 SRC_FILES := $(wildcard $(SRC_DIR)/*.c)
 SRC_FILES1 := $(wildcard $(SRC_DIR1)/*.c)
 
-#variable flag
+#variable flag pour l'interface et les autres fichiers.c
 CFLAGS := -Wall -g
 CFLAGS2=`pkg-config --cflags gtk+-3.0` 
 LIBS=`pkg-config --libs gtk+-3.0`
@@ -27,7 +27,7 @@ all: $(SRC_FILES:$(SRC_DIR)/%.c=$(BUILD_DIR)/%) interface $(SRC_FILES1:$(SRC_DIR
 interface: interface.c 
 	$(CC) ${CFLAGS2} -o ${PROG_NAME} ${PROG_NAME}.c ${LIBS}
 
-#creation d'un dossier contenant les fichiers executables
+#creation d'un dossier build contenant les fichiers executables 
 $(BUILD_DIR)/%: $(SRC_DIR)/%.c 
 	@mkdir -p $(@D)
 	$(CC)  $(CFLAGS) -o $@ $^
