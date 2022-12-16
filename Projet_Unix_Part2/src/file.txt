@@ -1,0 +1,2 @@
+Le socket serveur est crée avec succès
+Erreur dans la liaison
