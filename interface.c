@@ -53,8 +53,8 @@ system("gnome-terminal -e 'sh -c \"gcc -o /home/khouloud/Desktop/projetUnix/Proj
     TexteConverti = g_locale_to_utf8(" Bienvenue \n Communication Client/Serveur ", -1, NULL, NULL, NULL); // Convertion du texte avec les balises
     Label = gtk_label_new(TexteConverti);                                                                // Application de la convertion à notre label
     gtk_label_set_justify(GTK_LABEL(Label), GTK_JUSTIFY_CENTER);                                         // On centre notre texte
-    button1 = gtk_button_new_with_mnemonic("Avec tube nommé");
-    button2 = gtk_button_new_with_label("Avec les sockets : Tcp");
+    button1 = gtk_button_new_with_mnemonic("Avec tubes nommés");
+    button2 = gtk_button_new_with_label("Avec les sockets : TCP");
     gtk_widget_set_size_request(GTK_WIDGET(button2), 70, 70);
     gtk_widget_set_size_request(GTK_WIDGET(button1),70, 70);
     gtk_container_add(GTK_CONTAINER(window), fixed);

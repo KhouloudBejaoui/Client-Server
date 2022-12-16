@@ -59,7 +59,7 @@ int main(int argc, char **argv)
     gtk_fixed_put(GTK_FIXED(fixed), nombres, 50, 50);
 
     gtk_window_set_resizable(GTK_WINDOW(window), FALSE);
-    gtk_window_set_title(GTK_WINDOW(window), "Résultat avec Tube nommé");
+    gtk_window_set_title(GTK_WINDOW(window), "Résultat avec Tubes nommés");
     gtk_window_set_default_size(GTK_WINDOW(window), 700, 500);
     gtk_window_set_position(GTK_WINDOW(window), GTK_WIN_POS_CENTER);
     g_signal_connect(window, "destroy", G_CALLBACK(gtk_main_quit), NULL);
